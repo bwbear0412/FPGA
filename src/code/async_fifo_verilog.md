@@ -1,8 +1,8 @@
 # RTL code for Async FIFO
 
-**fifo1.v - FIFO top-level module**
+## fifo1.v - FIFO top-level module
 
-```verilog
+```Verilog
 module fifo1 #(parameter DSIZE = 8,
                parameter ASIZE = 4)
     (output [DSIZE-1:0] rdata,
@@ -64,9 +64,9 @@ module fifo1 #(parameter DSIZE = 8,
 endmodule
 ```
 
-**fifomem.v - FIFO memory buffer**
+## fifomem.v - FIFO memory buffer
 
-```verilog
+```Verilog
 module fifomem #(parameter DATASIZE = 8, // Memory data word width
                  parameter ADDRSIZE = 4) // Number of mem address bits
     (output [DATASIZE-1:0] rdata,
@@ -101,9 +101,9 @@ module fifomem #(parameter DATASIZE = 8, // Memory data word width
 endmodule
 ```
 
-**sync_r2w.v - Read-domain to write-domain synchronizer**
+## sync_r2w.v - Read-domain to write-domain synchronizer
 
-```verilog
+```Verilog
 module sync_r2w #(parameter ADDRSIZE = 4)
     (output reg [ADDRSIZE:0] wq2_rptr,
      input      [ADDRSIZE:0] rptr,
@@ -120,9 +120,9 @@ module sync_r2w #(parameter ADDRSIZE = 4)
 endmodule
 ```
 
-**sync_w2r.v - Write-domain to read-domain synchronizer**
+## sync_w2r.v - Write-domain to read-domain synchronizer
 
-```verilog
+```Verilog
 module sync_w2r #(parameter ADDRSIZE = 4)
     (output reg [ADDRSIZE:0] rq2_wptr,
      input      [ADDRSIZE:0] wptr,
@@ -138,9 +138,9 @@ module sync_w2r #(parameter ADDRSIZE = 4)
 endmodule
 ```
 
-**rptr_empty.v - Read pointer & empty generation logic**
+## rptr_empty.v - Read pointer & empty generation logic
 
-```verilog
+```Verilog
 module rptr_empty #(parameter ADDRSIZE = 4)
     (output reg                rempty,
      output     [ADDRSIZE-1:0] raddr,
@@ -179,9 +179,9 @@ module rptr_empty #(parameter ADDRSIZE = 4)
 endmodule
 ```
 
-**wptr_full.v - Write pointer & full generation logic**
+## wptr_full.v - Write pointer & full generation logic
 
-```verilog
+```Verilog
 module wptr_full #(parameter ADDRSIZE = 4)
     (output reg                wfull,
      output     [ADDRSIZE-1:0] waddr,
@@ -219,4 +219,3 @@ module wptr_full #(parameter ADDRSIZE = 4)
         end
 endmodule
 ```
-

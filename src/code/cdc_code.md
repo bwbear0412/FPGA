@@ -5,9 +5,11 @@
 * 加握手信号
 * 格雷码转换
 
-参考资料：[FPGA&ASIC笔面试题船新版本](../doc/FPGA&amp;ASIC笔面试题船新版本.pdf) [跨时钟域处理方法](https://www.cnblogs.com/rouwawa/p/7501319.html)  
+参考资料：
+[FPGA&ASIC笔面试题船新版本](../doc/FPGA&amp;ASIC笔面试题船新版本.pdf) 
+[跨时钟域处理方法](https://www.cnblogs.com/rouwawa/p/7501319.html)  
 
-**信号从B到A（慢到快）**
+## 信号从B到A（慢到快）
 
 ![信号从B到A-慢到快](../pics/cdc_slow2fast.png)
 
@@ -33,13 +35,13 @@ assign pulse_a_neg = pules_a_r3 & (~pules_a_r2);
 assign pulse_a     = pules_a_r2;
 ```
 
-**信号从A到B（快到慢）**
+## 信号从A到B（快到慢）
 
 ![信号从A到B-快到慢](../pics/cdc_fast2slow.png)
 
 先把脉冲信号在clk_a下展宽，变成电平信号signal_a，再向clk_b传递，当确认clk_b已经“看见”信号同步过去之后，再清掉signal_a。代码通用框架如下：
 
-```verilog
+```Verilog
 module Sync_Pulse (
     input  clk_a,
     input  clk_b,
@@ -110,4 +112,3 @@ module Sync_Pulse (
     
 endmodule
 ```
-

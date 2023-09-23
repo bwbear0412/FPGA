@@ -3,7 +3,7 @@
 * LSB优先
 * MSB优先
 
-```verilog
+```Verilog
 // -----------------------
 // LSB first
 // -----------------------
@@ -82,7 +82,7 @@ data_out[0] = data_in[3];
 附加要求：将输入输出的位宽做成参数化
 ```
 
-```verilog
+```Verilog
 module Deserialize
     #(
         parameter    DATA_WIDTH = 4,
@@ -207,4 +207,3 @@ module Deserialize
     
 endmodule
 ```
-

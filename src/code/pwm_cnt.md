@@ -1,10 +1,10 @@
-# 题目：用Verilog实现PWM控制呼吸灯。
+# 题目：用Verilog实现PWM控制呼吸灯
 
 呼吸周期2秒：1秒逐渐变量，1秒逐渐变暗。系统时钟24MHz, pwm周期1ms, 精度1us。
 
-```verilog
+```Verilog
 module Breath_LED(
-	input    clk,    // 24MHz
+    input    clk,    // 24MHz
     input    rst_n,
     input    led_out
 );
@@ -98,4 +98,3 @@ module Breath_LED(
     
 endmodule
 ```
-

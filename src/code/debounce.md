@@ -1,8 +1,8 @@
 # 题目：用Verilog实现按键抖动消除电路，抖动小于15ms,输入时钟12MHz
 
-```verilog
+```Verilog
 module debounce(
-	input    clk, // 12mhz
+    input    clk, // 12mhz
     input    rst_n,
     input    key_in,
     output   key_flag
@@ -43,4 +43,3 @@ module debounce(
     assign key_flag = ((delay_cnt == JITTER - 1) && (key_in == 1'b1)) ? 1'b1 : 1'b0;
 endmodule
 ```
-

@@ -1,6 +1,6 @@
-### 题目：用Verilog实现glitch free 时钟切换电路
+# 题目：用Verilog实现glitch free 时钟切换电路
 
-**输入select, clka, clkb. select为1输出clka, select为0输出clkb**
+输入select, clka, clkb. select为1输出clka, select为0输出clkb
 
 理论知识：  
 [Glitch Free时钟切换技术](https://mp.weixin.qq.com/s/w3Wu7HkSr5v94kHrLvRIcw)  
@@ -12,11 +12,11 @@ part2是两个时钟源为异步时钟的关系
 
 part3是两个时钟源为异步时钟的关系
 
-**有毛刺的时钟切换电路**
+## 有毛刺的时钟切换电路
 
 ![有毛刺的时钟切换电路](../pics/glitch_free_part1.png)
 
-```verilog
+```Verilog
 // --------------------------
 // Part 1
 // 很辣鸡的写法
@@ -34,11 +34,11 @@ assign outclk = (clk1 & select) | (~select & clk0);
 endmodule
 ```
 
-**相关时钟源的毛刺保护**
+## 相关时钟源的毛刺保护
 
 ![相关时钟源的毛刺保护](../pics/glitch_free_part2.png)
 
-```verilog
+```Verilog
 // --------------------------
 // Part 2
 // 两个时钟源是倍数的关系
@@ -83,11 +83,11 @@ assign outclk = (out1 & clk1) | (out0 & clk0)
 endmodule
 ```
 
-**针对无关时钟源的毛刺保护**
+## 针对无关时钟源的毛刺保护
 
 ![针对无关时钟源的毛刺保护](../pics/glitch_free_part3.png)
 
-```verilog
+```Verilog
 // --------------------------
 // Part 3
 // 两个时钟源为异步时钟的关系

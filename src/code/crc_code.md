@@ -1,6 +1,6 @@
-**并行方式——华为**
+# 并行方式——华为
 
-```verilog
+```Verilog
 // --------------------------------
 // This code is used to check CRC_16 of 8-bits cell data, 
 // the generator polynomial is x^16+x^12+x^5+1
@@ -28,9 +28,9 @@ always@(Crc_out or Data_in)
     end
 ```
 
-**串行方式——华为**
+# 串行方式——华为
 
-```verilog
+```Verilog
 // --------------------------------
 // This code is used to check CRC_16 of serial data, 
 // the generator polynomial is x^16+x^12+x^5+1
@@ -60,7 +60,7 @@ always@(posedge Reset or posedge Gclk)
     end
 ```
 
-**并行方式——乐鑫笔试题**
+# 并行方式——乐鑫笔试题
 
 ```verilog
 // -------------------------------
@@ -69,7 +69,7 @@ always@(posedge Reset or posedge Gclk)
 // -------------------------------
 ```
 
-```c
+```C
 unsigned char cal_table_high_first(unsigned char value)
 {
     unsigned char i;
@@ -89,7 +89,7 @@ unsigned char cal_table_high_first(unsigned char value)
 }
 ```
 
-```verilog
+```Verilog
 // -------------------------------
 // 方法一
 // -------------------------------
@@ -118,7 +118,7 @@ always @ (posedge clk or negedge rst_n)
 endmodule
 ```
 
-```verilog
+```Verilog
 // -------------------------------
 // 方法二
 // -------------------------------
@@ -149,7 +149,7 @@ module loop2(
 endmodule
 ```
 
-```verilog
+```Verilog
 // -------------------------------
 // 方法三
 // 也可以将C语言函数封装成Verilog的function
@@ -194,9 +194,9 @@ module loop3(
 endmodule
 ```
 
-**testbench**  
+## testbench  
 
-```verilog
+```Verilog
 module loop1_tb;
     reg        clk;
     reg        rst_n;
@@ -231,4 +231,3 @@ module loop1_tb;
     
 endmodule
 ```
-
